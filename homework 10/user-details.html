@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<h2>Details</h2>
+
+<script>
+
+
+    let url = new URL(location.href)
+    let id = url.searchParams.get('id')
+
+    fetch('http://jsonplaceholder.typicode.com/users/' + id)
+        .then(value => value.json())
+        .then(users => {
+                let div = document.createElement('div');
+                div.classList.add('user-wrap')
+                document.body.appendChild(div)
+                let ul = document.createElement('ul');
+                div.appendChild(ul)
+                console.log(users);
+
+                for (let user in users) {
+
+                    if (typeof users[user] !== 'object') {
+                        let li = document.createElement('li');
+                        ul.appendChild(li)
+                        li.innerText = `${user} - ${users[user]}`
+                    } else if (typeof users[user] === 'object') {
+                        let innerLi = document.createElement('li')
+                        ul.appendChild(innerLi)
+                        innerLi.innerText = `${user}:`
+
+                        for (let key in users[user]) {
+
+                            if (typeof users[user][key] !== 'object') {
+                                let innerSecLi = document.createElement('li')
+                                innerLi.appendChild(innerSecLi)
+                                innerSecLi.innerText = `${key} - ${users[user][key]}`
+                            } else {
+                                let innerSecUl = document.createElement('ul')
+                                innerLi.appendChild(innerSecUl)
+                                let innerThrLi = document.createElement('li')
+                                innerSecUl.appendChild(innerThrLi)
+                                innerThrLi.innerText = `${key}:`
+
+                                for (let item in users[user][key]) {
+                                    let killMe = document.createElement('li')
+                                    innerSecUl.appendChild(killMe)
+                                    killMe.innerText = `${item} - ${users[user][key][item]} `
+                                }
+                            }
+                        }
+                    }
+                }
+
+
+            }
+        )
+
+
+</script>
+
+</body>
+</html>
