@@ -1,0 +1,218 @@
+/* index.html - всі блоки з user - по 2 в рядок. кнопки/аосилвння
+розташувати під інформацією про user.*/
+body {
+    width: 99%;
+}
+
+.user-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+
+}
+
+.user {
+
+    flex-wrap: wrap;
+    margin: 10px;
+    text-align: center;
+    width: 48%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border: silver solid 1px;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow:0 1px 1px rgba(0,0,0,0.15),0 2px 2px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15)
+}
+
+/*     user-details.html - блок з інфою про user зверху сторінки. Кнопка нижчє, на 90% ширини сторінки, по центру.
+     блоки з короткою іфною про post - в ряд по 5 .*/
+
+ul {
+    list-style-type: none;
+}
+
+.user-wrap {
+
+    margin: 10px;
+    text-align: start;
+    width: 98%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    border: silver solid 1px;
+    border-radius: 10px;
+    font-size: 20px;
+    background: linear-gradient(-45deg, #000 50%, #eee 50%);
+    box-shadow:0 1px 1px rgba(0,0,0,0.15),0 2px 2px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15)
+}
+
+.buttonWrap {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    box-sizing: border-box;
+    margin: 15px;
+}
+
+button {
+    position: relative;
+    width: 90%;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: inherit;
+    font-family: inherit;
+}
+.button {
+    font-weight: 600;
+    color: black;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: silver;
+    border: 2px solid black;
+    border-radius: 0.75em;
+    transform-style: preserve-3d;
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+button:active {
+    background: black;
+    color: white;
+    transform: translate(0em, 0.35em);
+}
+
+
+.divOfPosts {
+    margin: 10px;
+    text-align: start;
+    width: 98%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: silver solid 1px;
+    border-radius: 10px;
+    font-size: 20px;
+    background: radial-gradient(#222222, #000000);
+    box-shadow:0 1px 1px rgba(0,0,0,0.15),0 2px 2px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15)
+
+}
+
+.titleDiv {
+    margin: 10px;
+    width: 18%;
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    border: silver solid 1px;
+    border-radius: 10px;
+    font-size: 20px;
+    background: linear-gradient(-90deg, #949494 10%, #efefef 90%);
+    box-shadow:0 1px 1px rgba(0,0,0,0.15),0 2px 2px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15)
+
+}
+
+/* post-details.html - блок з інфою про пост зверху. Коментарі - по 4 в ряд.
+Всі елементи котрі характеризують users, posts, comments візуалізувати,
+так, щоб було видно що це блоки (дати фон. марджини і тд)*/
+
+.postInfo {
+    margin: 10px;
+    width: 99%;
+    color: white;
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    border: silver solid 1px;
+    border-radius: 10px;
+    font-size: 20px;
+background: linear-gradient(to left, #232526, #414345);
+    box-shadow:0 1px 1px rgba(0,0,0,0.15),0 2px 2px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15)
+
+}
+
+a {
+    position: relative;
+    display: inline-block;
+    padding: 8px 20px;
+    background: black;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    margin-top: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: 0.5s;
+}
+
+a:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    background: #fff;
+    color: #000;
+}
+
+.CommentsWrap {
+    margin: 10px;
+    width: 99%;
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    border: silver solid 1px;
+    border-radius: 10px;
+    font-size: 20px;
+    background: linear-gradient(-90deg, #949494 10%, #efefef 90%);
+    box-shadow:0 1px 1px rgba(0,0,0,0.15),0 2px 2px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15);
+
+}
+
+.post {
+    margin: 10px;
+    width: 30%;
+    min-height: 400px;
+    height: fit-content;
+    color: white;
+    box-sizing: border-box;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    border: silver solid 1px;
+    border-radius: 10px;
+    font-size: 20px;
+    box-shadow:0 4px 4px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 4px 4px rgba(0,0,0,0.15),0 8px 8px rgba(0,0,0,0.15);
+    background: linear-gradient(to left, #232526, #414345);
+
+}
+
+.postInfo ul {
+    padding: 0;
+}
+
+.post ul {
+    padding: 0;
+
+}
+.post li {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    align-items: center;
+    text-align: center;
+}
